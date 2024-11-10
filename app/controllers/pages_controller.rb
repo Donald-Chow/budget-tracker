@@ -16,5 +16,6 @@ class PagesController < ApplicationController
         end
       }
     ]
+    @items = Item.all
   end
 end
