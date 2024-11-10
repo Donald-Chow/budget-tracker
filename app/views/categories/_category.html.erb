@@ -1,0 +1,11 @@
+<div id="<%= dom_id category %>">
+  <div class="flex justify-between items-center">
+    <%= link_to category, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" do %>
+      <h2 class="font-bold text-2xl"><%= category.name %></h2>
+    <% end %>
+    <div class="flex items-center">
+      <%= link_to "Edit", edit_category_path(category), class: "rounded-lg py-3 px-5 bg-yellow-500 text-white block font-medium" %>
+      <%#= link_to "Delete", category, method: :delete, data: { confirm: "Are you sure?" }, class: "rounded-lg py-3 px-5 bg-red-500 text-white block font-medium ml-2" %>
+    </div>
+  </div>
+</div>

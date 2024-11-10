@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: rent
+  amount: 50_000
+  category: rent
+  receipt: ssh
+
+two:
+  name: ice cream
+  amount: 150
+  category: groceries
+  receipt: lawson
+
+three:
+  name: movie ticket
+  amount: 1_800
+  category: entertainment
+  receipt: lawson
+
+four:
+  name: Asahi Super Dry
+  amount: 200
+  category: groceries
+  receipt: lawson
