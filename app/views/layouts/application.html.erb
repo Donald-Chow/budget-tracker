@@ -23,8 +23,9 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+  <body class='flex flex-col h-dvh'>
+    <main class="flex grow">
+      <%= render 'shared/side_bar', categories: @categories %>
       <%= yield %>
     </main>
   </body>
