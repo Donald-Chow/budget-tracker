@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  include ChartDataHelper
   before_action :set_category, only: %i[ show edit update destroy ]
 
   # GET /categories or /categories.json
@@ -8,6 +9,8 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @bar_chart_data = bar_chart_data([ @category ])
+    @pie_chart_data = @category.items.group(:name).sum(:amount)
   end
 
   # GET /categories/new

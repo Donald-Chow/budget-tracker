@@ -1,7 +1,7 @@
 <div class="mx-auto w-full flex p-4">
   <div class="w-full">
     <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+      < class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
     <div class="flex justify-between items-center w-full">
@@ -11,6 +11,35 @@
       </div>
     </div>
 
-    <p>Chart goes here</p>
+    <p class="<%= @category.items.sum(:amount) > @category.budget ? 'text-red-500' : 'text-green-500' %>">
+      Total Spending <%= number_to_currency(@category.items.sum(:amount), unit: '¥', precision: 0) %> / <%= number_to_currency(@category.budget, unit: '¥', precision: 0) %>
+    </p>
+    <%= pie_chart @pie_chart_data, title: "This month's spending" %>
+    <%= bar_chart @bar_chart_data, stacked: true, library: {
+    scales: {
+      x: { stacked: true },
+      y: {
+        stacked: true
+      }
+    }
+  } %>
+    <h2>Purchases</h2>
+    <table class="table-auto w-full">
+      <thead>
+        <tr>
+          <th class="px-4 py-2">Date</th>
+          <th class="px-4 py-2">Name</th>
+          <th class="px-4 py-2">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @category.items.each do |item| %>
+          <tr>
+            <td class="border px-4 py-2"><%= item.receipt.date.strftime("%B %d, %Y") %></td>
+            <td class="border px-4 py-2"><%= item.name %></td>
+            <td class="border px-4 py-2"><%= number_to_currency(item.amount, unit: '¥', precision: 0) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </div>
   </div>
-</div>

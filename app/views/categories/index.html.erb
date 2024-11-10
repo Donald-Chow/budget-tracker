@@ -12,7 +12,9 @@
 
   <div id="categories" class="min-w-full flex flex-col gap-2">
     <% @categories.each do |category| %>
-      <%= render category %>
+      <table>
+        <%= render category %>
+      </table>
     <% end %>
   </div>
 </div>
