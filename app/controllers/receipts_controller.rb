@@ -12,7 +12,7 @@ class ReceiptsController < ApplicationController
 
   # GET /receipts/new
   def new
-    @receipt = Receipt.new
+    @receipt = Receipt.new; @receipt.items.build
   end
 
   # GET /receipts/1/edit
@@ -65,6 +65,6 @@ class ReceiptsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def receipt_params
-      params.fetch(:receipt, {})
+      params.require(:receipt).permit(:store, items_attributes: %i[id name category_id amount _destroy])
     end
 end

@@ -1,0 +1,8 @@
+<div class="bg-gray-200 p-1" data-nested-field-target="fields">
+  <div class="flex justify-around gap-2">
+    <%= i.input :name %>
+    <%= i.association :category %>
+    <%= i.input :amount %>
+  </div>
+  <%= i.input :_destroy, as: :boolean, label: 'Remove item' %>
+</div>

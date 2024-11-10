@@ -5,17 +5,18 @@
 
   <% content_for :title, "Receipts" %>
 
-  <div class="flex justify-between items-center">
+  <div class="flex justify-between items-center p-5">
     <h1 class="font-bold text-4xl">Receipts</h1>
-    <%= link_to "New receipt", new_receipt_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    <%= link_to "New receipt", new_receipt_path, class: "rounded-lg py-3 px-5 bg-indigo-800 text-white block font-medium" %>
   </div>
 
-  <div id="receipts" class="min-w-full">
+  <div id="receipts" class="min-w-full p-5 flex flex-col gap-2">
     <% @receipts.each do |receipt| %>
-      <%= render receipt %>
-      <p>
-        <%= link_to "Show this receipt", receipt, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      </p>
+      <div class="bg-gray-100 hover:bg-gray-200">
+        <%= link_to receipt do  %>
+          <%= render receipt %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
