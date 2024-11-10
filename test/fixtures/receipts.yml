@@ -6,6 +6,8 @@
 #
 lawson:
   store: Lawson
+  date: <%= Date.today %>
 
 ssh:
   store: Sakura Share House
+  date: <%= Date.today.beginning_of_month %>

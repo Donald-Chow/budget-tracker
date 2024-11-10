@@ -14,7 +14,7 @@ entertainment:
 
 rent:
   name: Rent
-  budget: 20_000
+  budget: 50_000
 
 transportation:
   name: Transportation

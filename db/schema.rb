@@ -34,6 +34,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_10_074000) do
 
   create_table "receipts", force: :cascade do |t|
     t.string "store"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
