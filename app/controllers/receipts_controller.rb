@@ -65,6 +65,6 @@ class ReceiptsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def receipt_params
-      params.require(:receipt).permit(:store, :date, items_attributes: %i[id name category_id amount _destroy])
+      params.require(:receipt).permit(:store, :date, :photo, items_attributes: %i[id name category_id amount _destroy])
     end
 end
