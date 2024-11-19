@@ -50,11 +50,14 @@ gem "simple_form-tailwind"
 # Use Chartkick for charts
 gem "chartkick"
 
-# use cloudinary for image upload
+# cloudinary for image uploads
 gem "cloudinary"
 
-# use ENV variables
+# ENV variables
 gem "dotenv-rails"
+
+# Use chatGPT
+gem "ruby-openai"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
