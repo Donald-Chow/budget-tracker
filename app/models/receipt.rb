@@ -6,4 +6,6 @@ class Receipt < ApplicationRecord
   validates :date, presence: true
 
   accepts_nested_attributes_for :items, allow_destroy: true
+
+  default_scope { where(date: Date.current.beginning_of_month..Date.current.end_of_month) }
 end
