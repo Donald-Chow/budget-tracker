@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#dashboard"
+  get "receipts/photo", to: "receipts#new_photo", as: :new_photo_receipt
+  post "receipts/photo", to: "receipts#create_photo", as: :create_photo_receipt
   resources :receipts
   resources :categories
 end
